@@ -22,7 +22,7 @@
 ## Create an archive
  - ar cr libtest.a test1.o test2.o
  - The cr flags tell ar to create the archive. Now you can link this archive using the -ltest option with gcc or g++.
-``
+ ```
  Note:
   - gcc -o app -L. -ltest app.o : This command line will not work. 
   	app.o: In function ‘main’:
@@ -31,9 +31,11 @@
 
   - gcc -o app app.o -L. –ltest. This command line will work
   - The reason is that the reference to f in app.o causes the linker to include the test.o pbject file from the libtest.a archive
-``
+```
 
 ## Position-Independent Code (PIC)
  - The function in a share library may be loaded at different addresses in different programs, so the code in the shared object must not depend on the address( or position) at which it is loaded. this consideration has no impact on you, as the programmer, except that you muse remember to use the -fPIC flag when compiling code that will be used in a share library.
  You can compile the object files into a shared library, like this:
+```
  	gcc -shared -fPIC -o libtest.so test1.o test2.o
+```
