@@ -22,7 +22,7 @@
 ## Create an archive
  - ar cr libtest.a test1.o test2.o
  - The cr flags tell ar to create the archive. Now you can link this archive using the -ltest option with gcc or g++.
- ```
+```
  Note:
   - gcc -o app -L. -ltest app.o : This command line will not work. 
   	app.o: In function ‘main’:
